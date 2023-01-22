@@ -7,6 +7,31 @@
 
 export function getClientsWithWrongBalance(array) {
   // Your code goes here...
+  const clients = [];
+
+  for (const value of array) {
+    let deposits = 0;
+
+    if (value['deposits']) {
+      for ( const deposit of value['deposits']) {
+        deposits += deposit;
+      }
+    }
+
+    let withdrawals = 0;
+    if (value['withdrawals']) {
+      for (const withdrawal of value['withdrawals']) {
+        withdrawals += withdrawal;
+      }
+    }
+
+    if (value['balance'] !== deposits - withdrawals) {
+      clients[clients.length] = value;
+    }
+
+  }
+
+  return clients;
 
 }
 
