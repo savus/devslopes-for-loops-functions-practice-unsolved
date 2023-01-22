@@ -5,7 +5,13 @@
 
 export function getClientWithNoMoney(array) {
   // Your code goes here...
-
+  const names = [];
+  for (const value of array) {
+    if (value['balance'] === 0) {
+      names[names.length] = value['name'];
+    }
+  }
+  return names;
 }
 
 // === TEST YOURSELF ===

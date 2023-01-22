@@ -6,7 +6,21 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
+  const client = [];
+  let largestBalance = 0;
 
+  for (const value of array) {
+    if (largestBalance < value['balance']) {
+      largestBalance = value['balance'];
+    }  
+  }
+
+  for (const value of array) {
+    if (largestBalance === value['balance']) {
+      client[0] = value;
+    }
+  }
+  return client;
 }
 
 

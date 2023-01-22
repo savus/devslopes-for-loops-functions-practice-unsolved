@@ -6,7 +6,11 @@
 
 export function getAllClientNames(array) {
   // Your code goes here...
-
+  const names = [];
+  for (const value of array) {
+    names[names.length] = value['name'];
+  }
+  return names;
 }
 
 

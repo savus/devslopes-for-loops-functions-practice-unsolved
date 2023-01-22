@@ -5,7 +5,24 @@
 
 export function getClientWithLeastBalance(array) {
   // Your code goes here...
+  const client = [];
+  let leastBalance = 0;
+  
+  //GET LARGEST VALUE FIRST TO STAY ABOVE 0 AND LOWEST BALANCE
+  for (const value of array) {
+    if (leastBalance < value['balance']) {
+      leastBalance = value['balance'];
+    }
+  }
 
+  //REDUCE LARGEST BALANCE TO LEAST BALANCE WHILE KEEPING ABOVE 0
+  for (const value of array) {
+    if( leastBalance > value['balance'] && value['balance'] > 0) {
+      client[0] = value;
+    }
+  }
+
+  return client;
 }
 
 // === TEST YOURSELF ===
