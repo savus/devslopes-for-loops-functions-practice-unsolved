@@ -7,7 +7,15 @@
 
 export function flatArrays(array) {
   // Your code goes here...
+  const joinedArray = [];
 
+  for (let i = 0; i < array.length; i++) {
+    let nestedArray = array[i];
+    for (let j = 0; j < nestedArray.length; j++) {
+      joinedArray[joinedArray.length] = nestedArray[j];
+    }
+  }
+  return joinedArray;
 }
 
 
